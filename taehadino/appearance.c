@@ -1,6 +1,33 @@
 // In this code, we have just skins and functions to clear those skins
 #include <ncurses.h>
-
+void people1(int y, int x){
+    mvprintw(y-11, x,"     $$$");
+    mvprintw(y-10, x,"    $$$$$");
+    mvprintw(y-9, x, "    $$$$$");
+    mvprintw(y-8, x, "     $$$   ");
+    mvprintw(y-7, x, "   $$$$$$$$  ");
+    mvprintw(y-6, x, "  $ $$$$$$ $");
+    mvprintw(y-5, x, " $  $$$$$$ $");
+    mvprintw(y-4, x, "    $$$$$$$ ");
+    mvprintw(y-3, x, "$$$ $$$ $$$$ ");
+    mvprintw(y-2, x, "  $$$$     $$$");
+    mvprintw(y-1, x, "            $$$");
+    mvprintw(y, x,   "             $$$");
+}
+void people2(int y, int x){
+    mvprintw(y-11, x,"     $$$");
+    mvprintw(y-10, x,"    $$$$$");
+    mvprintw(y-9, x, "    $$$$$");
+    mvprintw(y-8, x, "     $$$   ");
+    mvprintw(y-7, x, "  $$$$$$$$$ $");
+    mvprintw(y-6, x, " $  $$$$$$ $");
+    mvprintw(y-5, x, "  $ $$$$$$ ");
+    mvprintw(y-4, x, "    $$$$$$ ");
+    mvprintw(y-3, x, "    $$$$$$ ");
+    mvprintw(y-2, x, " $$  $$$$  ");
+    mvprintw(y-1, x, "   $$$ $$$ ");
+    mvprintw(y, x,   "        $$$$");
+}
 void dinasour1(int y, int x) {
 	mvprintw(y-12, x, "         $$$$$$$");
     mvprintw(y-11, x, "       $$  $$$$$");
