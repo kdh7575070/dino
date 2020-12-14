@@ -229,6 +229,7 @@ void startEngine(int highScore, struct user firstUser)
 			clearDinasourDown(diY, diX);
 			isJumping = false;
 		}
+		else clearDinasourUp(diY, diX);
 		if (diY <= 7)
 		{
 			isJumping = false;
