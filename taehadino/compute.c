@@ -150,6 +150,8 @@ void startMenu() {
 	getstr(firstUser.lastName);
 	mvprintw(maxY+8, maxX-12, "Age: ");
 	getstr(firstUser.age);
+	mvprintw(maxY+9, maxX-12, "Select mode: a(dinosaur) / b(people)");
+	getMode = getch();
 	noecho();
 
 	clear();
@@ -170,7 +172,18 @@ void showDinasour(int diY, int diX) {
 		counter--;
 	}
 }
-
+// Which people should be printed
+void showPeople(int diY, int diX) {
+	static int counter = 0;
+	if (counter == 0) {
+		people1(diY, diX);
+		counter++;
+	}
+	else {
+		people2(diY, diX);
+		counter--;
+	}
+}
 // Finishing function - 헷갈리지 말기 y축이 먼저, 그다음이 x축방향임
 void endGame(int score, int highScore, int diY, int diX, struct user firstUser) {
 	nodelay(stdscr, FALSE);
