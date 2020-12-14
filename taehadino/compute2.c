@@ -120,13 +120,13 @@ int checkGame(int y, int x, int diY, int diX) {
 // Make game faster
 int computeTime(int delayTime) {
 	if (delayTime >= 250000) {
-		delayTime -= 900;
+		delayTime -= 10000;
 	}
 	else if (delayTime >= 200000) {
-		delayTime -= 600;
+		delayTime -= 5000;
 	}
 	else {
-		delayTime -= 200;
+		delayTime -= 10;
 	}
 	return delayTime;
 }
@@ -135,7 +135,6 @@ int computeTime(int delayTime) {
 void startMenu() {
 	struct user firstUser;
 	int highScore, scores;
-		
 	
 	int maxX = getmaxx(stdscr)/2;
 	int maxY = getmaxy(stdscr)/2;
@@ -144,14 +143,14 @@ void startMenu() {
 	showTrex(maxY, maxX);
 	attroff(COLOR_PAIR(3));
     // Get information from user
-	mvprintw(maxY+1, maxX-28, "Write inputs and press Enter to start Game.");
-    mvprintw(maxY+2, maxX-26, "When you had prize, fire it with 'k' key!");
-	mvprintw(maxY+3, maxX-21, "You can jump with space key!");
-	mvprintw(maxY+4, maxX-15, "Name: ");
+	mvprintw(maxY+2, maxX-24, "Write inputs and press Enter to start Game.");
+    mvprintw(maxY+3, maxX-22, "In case you wanna quit, put CTRL+C !");
+	mvprintw(maxY+4, maxX-20, "You can jump with space key!");
+	mvprintw(maxY+6, maxX-12, "Name: ");
 	getstr(firstUser.name);
-	mvprintw(maxY+5, maxX-15, "Last name: ");
+	mvprintw(maxY+7, maxX-12, "Last name: ");
 	getstr(firstUser.lastName);
-	mvprintw(maxY+6, maxX-15, "Age: ");
+	mvprintw(maxY+8, maxX-12, "Age: ");
 	getstr(firstUser.age);
 	noecho();
 
@@ -212,11 +211,11 @@ void endGame(int score, int highScore, int diY, int diX, struct user firstUser) 
 	showLoss(maxY, maxX);
 	char keyToExit = getch();
     // Exit or reset game
-	if (keyToExit == 'r') {
+	if (keyToExit == 'r' || keyToExit == 'ㄱ') {
 		attroff(COLOR_PAIR(2));
 		startEngine(highScore, firstUser);
 	}
-	else if (keyToExit == 'q') {
+	else if (keyToExit == 'q' || keyToExit == 'ㅂ') {
 		clear();
 		showScoreBoard();
 		return;
@@ -224,20 +223,6 @@ void endGame(int score, int highScore, int diY, int diX, struct user firstUser) 
 	else {
 		endGame(score, highScore, diY, diX, firstUser);
 	}
-}
-
-// Give user the arrow
-int computePrize(int score, int usedPrize) {
-	if (score >= 20 && score <= 40 && usedPrize == 0) {
-		return 1;
-	}
-	else if (score >= 60 && score <= 80 && usedPrize <= 1) {
-		return 1;
-	}
-	else if (score >= 100 && score <= 120 && usedPrize <= 2) {
-		return 1;
-	}	
-	return 0;
 }
 
 // The main engine!
