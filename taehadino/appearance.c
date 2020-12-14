@@ -32,19 +32,28 @@ void dinasour2(int y, int x) {
 	mvprintw(y-1, x, "     $$$  $     ");
 	mvprintw(y, x,   "          $$    ");
 }
-
 void cactus1(int y, int x) {
-	mvprintw(y-3, x, "###");
-	mvprintw(y-2, x, "###");
-	mvprintw(y-1, x, "#'");
-	mvprintw(y, x,   " ##");
+	mvprintw(y-5, x, "  ## #");
+	mvprintw(y-4, x, "  ## #");
+	mvprintw(y-3, x, "# ####");
+	mvprintw(y-2, x, "####  " );
+	mvprintw(y-1, x, "  ## #");
+	mvprintw(y, x,   "  ###");
 }
 
 void cactus2(int y, int x) {
-	mvprintw(y-4, x, "###");
-	mvprintw(y-3, x, "###");
+	mvprintw(y-5, x, "  ##");
+	mvprintw(y-4, x, "# ##");
+	mvprintw(y-3, x, "# ## #");
+	mvprintw(y-2, x, " ####");
+	mvprintw(y-1, x, "  ##");
+	mvprintw(y, x,   "  ##");
+}
+void cactus3(int y, int x) {
+	mvprintw(y-4, x, "  #");
+	mvprintw(y-3, x, "# # #");
 	mvprintw(y-2, x, "####");
-	mvprintw(y-1, x, "#'");
+	mvprintw(y-1, x, " ##");
 	mvprintw(y, x,   " ##");
 }
 
@@ -97,6 +106,7 @@ void showTrex(int x, int y) {
 
 
 void clearCactus1(int y, int x) {
+	mvprintw(y-5, x,   "       ");
 	mvprintw(y-4, x+7, "                 ");
 	mvprintw(y-3, x+7, "                 ");
 	mvprintw(y-2, x+7, "                 ");
