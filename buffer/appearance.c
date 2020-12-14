@@ -3,14 +3,13 @@
 
 void dinasour1(int y, int x)
 {
-	mvprintw(y - 12, x, "         $$$$$$$");
-	mvprintw(y - 11, x, "       $$  $$$$$");
-	mvprintw(y - 10, x, "       $$$$$$$$$");
-	mvprintw(y - 9, x, "$      $$$      ");
-	mvprintw(y - 8, x, "$$     $$$$$$$  ");
-	mvprintw(y - 7, x, "$$$   $$$$$     ");
-	mvprintw(y - 6, x, " $$  $$$$$$$$$$ ");
-	mvprintw(y - 5, x, " $$$$$$$$$$$    ");
+	mvprintw(y - 11, x, "         $$$$$$$");
+	mvprintw(y - 10, x, "       $$  $$$$$");
+	mvprintw(y - 9, x, "       $$$$$$$$$");
+	mvprintw(y - 8, x, "$      $$$      ");
+	mvprintw(y - 7, x, "$$     $$$$$$$  ");
+	mvprintw(y - 6, x, "$$$   $$$$$     ");
+	mvprintw(y - 5, x, " $$  $$$$$$$$$$ ");
 	mvprintw(y - 4, x, "  $$$$$$$$$$    ");
 	mvprintw(y - 3, x, "    $$$$$$$$    ");
 	mvprintw(y - 2, x, "     $$$$$$     ");
@@ -20,14 +19,13 @@ void dinasour1(int y, int x)
 
 void dinasour2(int y, int x)
 {
-	mvprintw(y - 12, x, "         $$$$$$$");
-	mvprintw(y - 11, x, "       $$  $$$$$");
-	mvprintw(y - 10, x, "       $$$$$$$$$");
-	mvprintw(y - 9, x, "$      $$$      ");
-	mvprintw(y - 8, x, "$$     $$$$$$$  ");
-	mvprintw(y - 7, x, "$$$   $$$$$     ");
-	mvprintw(y - 6, x, " $$  $$$$$$$$$$ ");
-	mvprintw(y - 5, x, " $$$$$$$$$$$    ");
+	mvprintw(y - 11, x, "         $$$$$$$");
+	mvprintw(y - 10, x, "       $$  $$$$$");
+	mvprintw(y - 9, x, "       $$$$$$$$$");
+	mvprintw(y - 8, x, "$      $$$      ");
+	mvprintw(y - 7, x, "$$     $$$$$$$  ");
+	mvprintw(y - 6, x, "$$$   $$$$$     ");
+	mvprintw(y - 5, x, " $$  $$$$$$$$$$ ");
 	mvprintw(y - 4, x, "  $$$$$$$$$$    ");
 	mvprintw(y - 3, x, "    $$$$$$$$    ");
 	mvprintw(y - 2, x, "     $$$$$$     ");
