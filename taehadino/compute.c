@@ -150,7 +150,7 @@ void startMenu() {
 	getstr(firstUser.lastName);
 	mvprintw(maxY+8, maxX-12, "Age: ");
 	getstr(firstUser.age);
-	mvprintw(maxY+9, maxX-12, "Select mode: a(dinosaur) / b(people)");
+	mvprintw(maxY+9, maxX-12, "Select mode [ a ] [ b ] [ c ] [ d ]");
 	getMode = getch();
 	noecho();
 
@@ -160,7 +160,7 @@ void startMenu() {
 	startEngine(highScore, firstUser);
 }
 
-// Which dinosaur should be printed
+/* Show your character */
 void showDinasour(int diY, int diX) {
 	static int counter = 0;
 	if (counter == 0) {
@@ -172,7 +172,6 @@ void showDinasour(int diY, int diX) {
 		counter--;
 	}
 }
-// Which people should be printed
 void showPeople(int diY, int diX) {
 	static int counter = 0;
 	if (counter == 0) {
@@ -181,6 +180,28 @@ void showPeople(int diY, int diX) {
 	}
 	else {
 		people2(diY, diX);
+		counter--;
+	}
+}
+void showAmongus(int diY, int diX) {
+	static int counter = 0;
+	if (counter == 0) {
+		amongus1(diY, diX);
+		counter++;
+	}
+	else {
+		amongus2(diY, diX);
+		counter--;
+	}
+}
+void showAlphaca(int diY, int diX) {
+	static int counter = 0;
+	if (counter == 0) {
+		alphaca1(diY, diX);
+		counter++;
+	}
+	else {
+		alphaca2(diY, diX);
 		counter--;
 	}
 }
@@ -344,9 +365,6 @@ void startEngine(int highScore, struct user firstUser)
 
 		mvhline(y + 1, 1, '-', getmaxx(stdscr) - 3);
 		updateObstacle();
-		if (userInput == ' ') {
-			diY -= 7;
-		}
 		/* show character you chose*/
 		switch(getMode){
 			case 'a':
@@ -355,11 +373,15 @@ void startEngine(int highScore, struct user firstUser)
 			case 'b':
 				showPeople(diY, diX);
 				break;
+			case 'c':
+				showAlphaca(diY, diX);
+				break;
+			case 'd':
+				showAmongus(diY, diX);
+				break;
 		}
 		
 		refresh();
-		// clearCactus1(y, x);
-		// refresh();
 		usleep(delayTime);
 		x -= 7;
 		delayTime = computeTime(delayTime);
