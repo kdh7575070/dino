@@ -2,7 +2,8 @@
 #include "appearance.c"
 #include "compute.c"
 
-int main() {
+int main()
+{
 	initscr();
 	start_color();
 	curs_set(FALSE);
