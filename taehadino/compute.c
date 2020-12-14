@@ -137,13 +137,19 @@ void startEngine(int highScore, struct user firstUser) {
 	x = maxX-20;
 	y = getmaxy(stdscr)-6;
 	int diY = y;
-	char userInput;
+	char userInput, userInput2;
+	char beforInput=' ';
     clear();
 	nodelay(stdscr, TRUE);
   	init_pair(1,COLOR_WHITE,COLOR_BLACK);
 	init_pair(4,COLOR_BLUE,COLOR_BLACK);
 	while (gameStatus == 1) {
-		userInput = getch();
+		userInput2 = getch();
+		userInput=userInput2;
+		if(userInput2==beforInput){
+			userInput='p';
+		}
+		beforInput=userInput2;
 		tcflush(0, TCIFLUSH);
 		// Show day or night
 		if (((score/100))%2){//100의자리대가짝수일때
