@@ -5,12 +5,12 @@ mvprintw(y-10, x,"         ||");
 mvprintw(y-9, x, "         ||");
 mvprintw(y-8, x, "    ,_________");
 mvprintw(y-7, x, "  /   ,--------|");
-mvprintw(y-6, x, "/`|   |        |");
-mvprintw(y-5, x, "/`|   |        |");
-mvprintw(y-4, x, "/`|   '--------|");
-mvprintw(y-3, x, "/`|            |");
-mvprintw(y-2, x, "/`|            |");
-mvprintw(y-1, x, "/`|    ___     |");
+mvprintw(y-6, x, "/-|   |        |");
+mvprintw(y-5, x, "| |   |        |");
+mvprintw(y-4, x, "| |   '--------|");
+mvprintw(y-3, x, "| |            |");
+mvprintw(y-2, x, "\_|            |");
+mvprintw(y-1, x, "  |    ___     |");
 mvprintw(y, x,   "`-\_,_|    \_._|");	          
 }
 
@@ -21,11 +21,11 @@ mvprintw(y-10, x,"         ||");
 mvprintw(y-9, x, "         ||");
 mvprintw(y-8, x, "    ,_________");
 mvprintw(y-7, x, "  /   ,--------|");
-mvprintw(y-6, x, "/`|   |        |");
-mvprintw(y-5, x, "/`|   |        |");
-mvprintw(y-4, x, "/`|   '--------|");
-mvprintw(y-3, x, "/`|            |");
-mvprintw(y-2, x, "/`|            |");
-mvprintw(y-1, x, "/`|    ___     |");         
+mvprintw(y-6, x, "/-|   |        |");
+mvprintw(y-5, x, "| |   |        |");
+mvprintw(y-4, x, "| |   '--------|");
+mvprintw(y-3, x, "| |            |");
+mvprintw(y-2, x, "\_|            |");
+mvprintw(y-1, x, "  |    ___     |");         
 mvprintw(y, x,   "`-|_,_/`  |_,_/");
 }
