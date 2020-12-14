@@ -166,6 +166,7 @@ void startEngine(int highScore, struct user firstUser)
 	init_pair(4, COLOR_BLUE, COLOR_BLACK);
 	bool isBottom = true;
 	bool isJumping = false;
+	bool beforeInput_jump = false;
 
 	while (gameStatus == 1)
 	{
@@ -205,11 +206,16 @@ void startEngine(int highScore, struct user firstUser)
 		{
 			isJumping = true;
 			isBottom = false;
+			beforeInput_jump = true;
 		}
 
 		if (isJumping)
 		{
 			diY -= 7;
+		}
+		else if (beforeInput_jump)
+		{
+			beforeInput_jump = false;
 		}
 		else
 		{
