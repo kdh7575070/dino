@@ -3,12 +3,21 @@
 #include <time.h>
 #include <stdlib.h>
 #include <termios.h>
+#define MAX_QUEUE_SIZE 6
 
 struct user {
 	char name[20];
 	char lastName[20];
 	char age[3];
 };
+typedef struct {
+	int x;
+	int y;
+	int type;
+}obstacle;
+obstacle Queue[MAX_QUEUE_SIZE];
+obstacle *queue;
+int rear, front;
 
 void startEngine(int highScore, struct user firstUser);
 int computePrize(int score, int usedPrize);
@@ -18,6 +27,59 @@ void startMenu();
 int computeTime(int delayTime);
 int checkGame(int y, int x, int diY, int diX);
 
+
+int isObstacle;
+void qinitialize();
+int isEmpty();
+int isFull();
+void addq(obstacle item);
+void deleteq();
+void updateObstacle();
+void showObstacle();
+
+void qinitialize(){
+	front=rear=0;
+}
+int isEmpty(){
+	return (front==rear);
+}
+int isFull(){
+	return ((rear + 1) % MAX_QUEUE_SIZE == front);
+}
+void addq(obstacle item){
+	if(isFull())
+		return;
+	rear++;
+	rear = rear % MAX_QUEUE_SIZE;
+	queue[rear] = item;
+}
+void deleteq(){
+	front = (front + 1) % MAX_QUEUE_SIZE;
+}
+void updateObstacle(){
+	int i = front;
+	for(;i!=rear;){
+		i = (i+1) % MAX_QUEUE_SIZE;
+		clearCactus1(queue[i].y,queue[i].x);
+		queue[i].x -= 7;
+		if(queue[i].x<0){
+			clearCactus1(queue[i].y,queue[i].x);
+			deleteq();
+		}
+	}
+}
+void showObstacle(){
+	int i = front;
+	for(;i!=rear;){
+		i = (i+1) % MAX_QUEUE_SIZE;
+		if(queue[i].type == 0)
+			cactus1(queue[i].y, queue[i].x);
+		else if(queue[i].type == 1)
+			cactus2(queue[i].y, queue[i].x);
+		else
+			cactus3(queue[i].y, queue[i].x);
+	}
+}
 // Check if the game is going to be finished in this turn of loop
 int checkGame(int y, int x, int diY, int diX) {
 	if (diY == y) {
@@ -131,7 +193,7 @@ int computePrize(int score, int usedPrize) {
 // The main engine!
 void startEngine(int highScore, struct user firstUser) {
     srand(time(NULL));
-	int x, y, diX=5, prize=0, usedPrize=0, score=0, delayTime = 300000
+	int x, y, diX=10, prize=0, usedPrize=0, score=0, delayTime = 300000
     , gameStatus=1, cactusNum=0;
 	int maxX=getmaxx(stdscr);
 	x = maxX-20;
@@ -139,6 +201,14 @@ void startEngine(int highScore, struct user firstUser) {
 	int diY = y;
 	char userInput, userInput2;
 	char beforInput=' ';
+	obstacle cactus;
+	queue = Queue; // obstacle queue
+	qinitialize(); // init queue
+	cactus.x = x;
+	cactus.y = y; 
+	cactus.type = cactusNum;
+	addq(cactus);  // add cactus before while
+	
     clear();
 	nodelay(stdscr, TRUE);
   	init_pair(1,COLOR_WHITE,COLOR_BLACK);
@@ -171,9 +241,14 @@ void startEngine(int highScore, struct user firstUser) {
 		box(stdscr, ACS_VLINE, ACS_HLINE);
 		//for clearing screen
 		clearDinasourUp(diY, diX);
-		if (x <= 7) {
-			x = getmaxx(stdscr)-20;
-            cactusNum = rand() % 2;
+		/* random obstacle */
+		isObstacle = rand() % 10; 		// create obstacle or not
+		if( isObstacle == 1 ){	   		// probability of creating obstacle: 10%
+			cactusNum = rand() % 3; 	// decide the type of cactus
+			cactus.x = getmaxx(stdscr)-20; // initial x-axis position of cactus
+			cactus.y = y;			// initial y-axis position of cactus
+			cactus.type = cactusNum;	// type of cactus
+			addq(cactus);			// add cactus to queue
 		}
         // if input is equal to ' ' then jump
 		if (userInput == ' ') {
@@ -183,24 +258,16 @@ void startEngine(int highScore, struct user firstUser) {
 		if (userInput == ' ') {
 			clearDinasourDown(diY, diX);		
 		}
-		if (x-diX <= 7) {
-			x -= 10;
-		}
-        if (cactusNum == 0) {
-        	cactus1(y, x);
-		}
-		else {
-			cactus2(y, x);
-		}
-		if (x-diX <= 7) {
-			x += 10;
-		}
-		gameStatus = checkGame(y, x, diY, diX);
+		obstacle first = queue[ (front+1)%MAX_QUEUE_SIZE ];   // closest obstacle from dinosaur
+		showObstacle();					// show all cactus in queue
+		
+		gameStatus = checkGame(first.y, first.x, diY, diX);
         // Bring back dinosaur
 		if (userInput == ' ') {
 			diY += 7;
 		}
 		mvhline(y+1, 1, '-', getmaxx(stdscr)-3);
+		updateObstacle();
         refresh();
         clearCactus1(y, x);
 		refresh();
