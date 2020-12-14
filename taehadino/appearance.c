@@ -29,11 +29,11 @@ void people2(int y, int x){
     mvprintw(y, x,   "         $$$ ");
 }
 void amongus1(int y, int x) {
-mvprintw(y-12, x,"      (-)  (-)");
-mvprintw(y-11, x,"       \\  \\/");
-mvprintw(y-10, x,"         ||");
-mvprintw(y-9, x, "         ||");
-mvprintw(y-8, x, "    ,_________");
+mvprintw(y-12, x,"      (-)  (-)  ");
+mvprintw(y-11, x,"       \\  \\/    ");
+mvprintw(y-10, x,"         ||     ");
+mvprintw(y-9, x, "         ||     ");
+mvprintw(y-8, x, "    ,_________  ");
 mvprintw(y-7, x, "  /   ,--------|");
 mvprintw(y-6, x, "/-|   |        |");
 mvprintw(y-5, x, "| |   |        |");
@@ -41,15 +41,15 @@ mvprintw(y-4, x, "| |   '--------|");
 mvprintw(y-3, x, "| |            |");
 mvprintw(y-2, x, "\\_|            |");
 mvprintw(y-1, x, "  |    ___     |");
-mvprintw(y, x,   "`-\\_,_|    \\_._|");	          
+mvprintw(y, x,   "  \\_,_|    \\_._|");	          
 }
 
 void amongus2(int y, int x) {
-mvprintw(y-12, x,"      (-)  (-)");
-mvprintw(y-11, x,"       \\  \\/");
-mvprintw(y-10, x,"         ||");
-mvprintw(y-9, x, "         ||");
-mvprintw(y-8, x, "    ,_________");
+mvprintw(y-12, x,"      (-)  (-)  ");
+mvprintw(y-11, x,"       \\  \\/    ");
+mvprintw(y-10, x,"         ||     ");
+mvprintw(y-9, x, "         ||     ");
+mvprintw(y-8, x, "    ,_________  ");
 mvprintw(y-7, x, "  /   ,--------|");
 mvprintw(y-6, x, "/-|   |        |");
 mvprintw(y-5, x, "| |   |        |");
@@ -57,7 +57,7 @@ mvprintw(y-4, x, "| |   '--------|");
 mvprintw(y-3, x, "| |            |");
 mvprintw(y-2, x, "\\_|            |");
 mvprintw(y-1, x, "  |    ___     |");         
-mvprintw(y, x,   "`-|_,_/`  |_,_/");
+mvprintw(y, x,   "  |_,_/`  |_,_/");
 }
 
 void alphaca1(int y, int x) {
@@ -171,17 +171,17 @@ void moon(int y, int x) {
 }
 
 void showLoss(int y, int x) {
-	mvprintw(y-6, x-15, "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-	mvprintw(y-5, x-15, "xxxxxxxxxxxX    xx          xx  xxxxxxxxxxxxxx");
-	mvprintw(y-4, x-15, "xx            xxx xx        xx  xxxxxxxxxxxxxx");
-	mvprintw(y-3, x-15, "xx           xxx  xxxx      xx  xxxxxxxxxxxxxx");
-	mvprintw(y-2, x-15, "xxxxxxxxxxxxxxxxxxxxxxxx    xx  xxxxxxxxxxxxxx");
-	mvprintw(y-1, x-15, "xxxxx      xxxx     xxxxx   xx  xxxxxxxxxxxxxx");
-	mvprintw(y, x-15,   "xx        xxx          xxx  xx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-	mvprintw(y+1, x-15, "xx        xx            xx  xx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-	mvprintw(y+2, x-15, "xx       xx             xx  xx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-	mvprintw(y+3, x-15, "Press 'r' to play again!");
-	mvprintw(y+4, x-15, "Or 'q' to exit from game.");
+	mvprintw(y-6, x-25, "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+	mvprintw(y-5, x-25, "xxxxxxxxxxxX    xx          xx  xxxxxxxxxxxxxx");
+	mvprintw(y-4, x-25, "xx            xxx xx        xx  xxxxxxxxxxxxxx");
+	mvprintw(y-3, x-25, "xx           xxx  xxxx      xx  xxxxxxxxxxxxxx");
+	mvprintw(y-2, x-25, "xxxxxxxxxxxxxxxxxxxxxxxx    xx  xxxxxxxxxxxxxx");
+	mvprintw(y-1, x-25, "xxxxx      xxxx     xxxxx   xx  xxxxxxxxxxxxxx");
+	mvprintw(y, x-25,   "xx        xxx          xxx  xx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+	mvprintw(y+1, x-25, "xx        xx            xx  xx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+	mvprintw(y+2, x-25, "xx       xx             xx  xx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+	mvprintw(y+3, x-25, "Press 'r' to play again!");
+	mvprintw(y+4, x-25, "Or 'q' to exit from game.");
 }
 
 void showTrex(int x, int y) {
@@ -197,11 +197,11 @@ void showTrex(int x, int y) {
 
 void clearCactus1(int y, int x) {
 	mvprintw(y-5, x,   "       ");
-	mvprintw(y-4, x+7, "                 ");
-	mvprintw(y-3, x+7, "                 ");
-	mvprintw(y-2, x+7, "                 ");
-	mvprintw(y-1, x+7, "                 ");
-	mvprintw(y, x+7,   "                 ");
+	mvprintw(y-4, x+7, "             ");
+	mvprintw(y-3, x+7, "             ");
+	mvprintw(y-2, x+7, "             ");
+	mvprintw(y-1, x+7, "             ");
+	mvprintw(y, x+7,   "             ");
 
 	// if (x <= 10) {
 	// 	mvprintw(y-4, 0, "     ");

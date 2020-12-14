@@ -150,8 +150,12 @@ void startMenu() {
 	getstr(firstUser.lastName);
 	mvprintw(maxY+8, maxX-12, "Age: ");
 	getstr(firstUser.age);
-	mvprintw(maxY+9, maxX-12, "Select mode [ a ] [ b ] [ c ] [ d ]");
+	mvprintw(maxY+9, maxX-12, "Select mode [ a ] : dino (default)");
+	mvprintw(maxY+10, maxX-12, "Select mode [ b ] : human");
+	mvprintw(maxY+11, maxX-12, "Select mode [ c ] : alpaca");
+	mvprintw(maxY+12, maxX-12, "Select mode [ d ] : amongus");
 	getMode = getch();
+	if(getMode=='\n') getMode = 'a';
 	noecho();
 
 	clear();
