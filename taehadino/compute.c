@@ -19,7 +19,7 @@ typedef struct {
 obstacle Queue[MAX_QUEUE_SIZE];
 obstacle *queue;
 int rear, front;
-
+char getMode;
 void startEngine(int highScore, struct user firstUser);
 void endGame(int score, int highScore, int diY, int diX, struct user firstUser);
 void showDinasour(int diY, int diX);
@@ -331,7 +331,19 @@ void startEngine(int highScore, struct user firstUser)
 
 		mvhline(y + 1, 1, '-', getmaxx(stdscr) - 3);
 		updateObstacle();
-		showDinasour(diY, diX);
+		if (userInput == ' ') {
+			diY -= 7;
+		}
+		/* show character you chose*/
+		switch(getMode){
+			case 'a':
+				showDinasour(diY, diX);
+				break;
+			case 'b':
+				showPeople(diY, diX);
+				break;
+		}
+		
 		refresh();
 		// clearCactus1(y, x);
 		// refresh();
