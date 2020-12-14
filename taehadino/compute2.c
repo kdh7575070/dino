@@ -28,33 +28,6 @@ void startMenu();
 int computeTime(int delayTime);
 int checkGame(int y, int x, int diY, int diX);
 int showScoreBoard();
-
-int showScoreBoard()
-{
-	int highScore, scores;
-	char name[100];
-	int count=0;
-	int maxX = getmaxx(stdscr)/2;
-	int maxY = getmaxy(stdscr)/2;
-	 // Read high score from file
-	FILE *highScoreFile;
-	highScoreFile = fopen("./highScore.txt", "r");
-
-	mvprintw(maxY-5, maxX-15, "          << Score Board! >>\n");
-	mvprintw(maxY-3, maxX-15, "%s %30s\n", "Score", "name");
-	fscanf(highScoreFile, "%d %s", &scores, name);
-	while(!feof(highScoreFile)){
-		if(count==0) highScore = scores;
-		mvprintw(maxY+count-1, maxX-15, "%4d %30s", scores, name);
-		fscanf(highScoreFile, "%d %s", &scores, name);
-		count++;
-		if(count==10) break;
-	}
-	fclose(highScoreFile);
-	getstr(name);
-	return highScore;
-}
-
 int isObstacle;
 void qinitialize();
 int isEmpty();
@@ -115,6 +88,32 @@ int checkGame(int y, int x, int diY, int diX) {
 		}
 	}
 	return 1;
+}
+
+int showScoreBoard()
+{
+	int highScore, scores;
+	char name[100];
+	int count=0;
+	int maxX = getmaxx(stdscr)/2;
+	int maxY = getmaxy(stdscr)/2;
+	 // Read high score from file
+	FILE *highScoreFile;
+	highScoreFile = fopen("./highScore.txt", "r");
+
+	mvprintw(maxY-5, maxX-15, "          << Score Board! >>\n");
+	mvprintw(maxY-3, maxX-15, "%s %30s\n", "Score", "name");
+	fscanf(highScoreFile, "%d %s", &scores, name);
+	while(!feof(highScoreFile)){
+		if(count==0) highScore = scores;
+		mvprintw(maxY+count-1, maxX-15, "%4d %30s", scores, name);
+		fscanf(highScoreFile, "%d %s", &scores, name);
+		count++;
+		if(count==10) break;
+	}
+	fclose(highScoreFile);
+	getstr(name);
+	return highScore;
 }
 
 // Make game faster
