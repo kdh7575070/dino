@@ -3,6 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <termios.h>
+#include <string.h>
 #define MAX_QUEUE_SIZE 6
 
 struct user {
