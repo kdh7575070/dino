@@ -55,10 +55,17 @@ int highScore;
 int rear, front;
 char getMode;
 obstacle cactus;
-// on_input(), on_alarm(), enable_kbd_signals() 는 ch7. bound_async.c 에서 가져옴
-// startEngine(), startMenu()에 매개변수 필요없음. 전역변수로 대체.
-// show() : 화면에 보여지는 함수. alarm이 켜질때 마다 호출됨.
-// startMenu -> startEngine(전역변수 초기값 설정, signal설정 ...)
+/*
+on_input(), on_alarm(), enable_kbd_signals() 는 ch7. bound_async.c 에서 가져옴
+전체적인 방식은 bound_async.c와 유사합니다.
+startEngine(), startMenu()에 매개변수 필요없음. 전역변수로 대체.
+show() : 화면에 보여지는 함수. alarm이 켜질때 마다 호출됨.
+startMenu -> startEngine(전역변수 초기값 설정, signal설정 ...) 이후 signal handler로 화면출력 및 input을 받습니다.
+타이밍이 안 맞아서 조정했는데 완벽하지는 않습니다..
+속도조절은 score가 x점일때 속도를 y로 설정하는 방식으로 바꿨습니다.
+일단 돌아가는거는 확인했는데 타이밍이나 기타 세부사항은 확인하지 못 했습니다. 
+다른 분들께서 돌려보시고 수정해주시면 감사하겠습니다!
+*/
 void on_input(int signum)
 {
 	int c = getch(); /* grab the char */
@@ -184,7 +191,7 @@ int computeTime(int delayTime)
 	{
 		delayTime = 280;
 	}
-	else if (score >= 400)
+	else if (score >= 200)
 	{
 		delayTime = 260;
 	}
