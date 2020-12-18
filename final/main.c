@@ -16,7 +16,10 @@ void really(int signo){
 			endwin();
 			exit(0);
 		}
-		else if(really=='N'||really=='n') return;
+		else if(really=='N'||really=='n'){
+			mvprintw(maxY-3, maxX-15, "                              ");
+			return;
+		}
 	}
 }
 

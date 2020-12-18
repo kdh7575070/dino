@@ -42,8 +42,8 @@ void deleteq();
 void updateObstacle();
 void showObstacle();
 
-int x, y, diX = 5, score = 0, delayTime = 300, gameStatus = 1, cactusNum = 0;
-int maxX, diY;
+int x, y, diX = 5, prize = 0, usedPrize = 0, score = 0, delayTime = 300, gameStatus = 1, cactusNum = 0;
+int maxX, x, y, diY;
 bool isBottom = true;
 bool isJumping = false;
 bool beforeInput_jump = false;
@@ -67,7 +67,6 @@ startMenu -> startEngine(전역변수 초기값 설정, signal설정 ...) 이후
 void on_input(int signum)
 {
 	int c = getch(); /* grab the char */
-	//userInput = c;
 	userInput = c;
 }
 
@@ -364,7 +363,7 @@ void startEngine()
 	isBottom = true;
 	isJumping = false;
 	beforeInput_jump = false;
-	//gameStatus = 1;
+	gameStatus = 1;
 	score = 0;
 	delayTime = 300;
 
@@ -399,10 +398,6 @@ void startEngine()
 void show()
 {
 	// tcflush(0, TCIFLUSH);
-	maxX = getmaxx(stdscr);
-	x = maxX - 20;
-	y = getmaxy(stdscr) - 6;
-	diY = y;
 
 	// Show day or night
 	if (((score / 100)) % 2)
