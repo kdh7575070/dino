@@ -1,4 +1,5 @@
-/* set_ticker.c
+/* set_ticker.c 
+ * set_ticker() sends SIGALRM
  * set_ticker( number_of_milliseconds )    
  *      arranges for interval timer to issue SIGALRM's at regular intervals
  *      returns -1 on error, 0 for ok
@@ -13,11 +14,11 @@ int set_ticker( int n_msecs )
 {
 	struct itimerval new_timeset;
 	long    n_sec, n_usecs;
-	n_sec = n_msecs / 1000 ;		/* int part*/
-	n_usecs = ( n_msecs % 1000 ) * 1000L ;  /* remainder*/
+	n_sec = n_msecs / 1000 ;		 /* int part */
+	n_usecs = ( n_msecs % 1000 ) * 1000L ;  /* remainder */
 
-	new_timeset.it_interval.tv_sec = n_sec;		/* set reload */
-	new_timeset.it_interval.tv_usec = n_usecs;  /* new ticker value */
+	new_timeset.it_interval.tv_sec  = n_sec;	/* set reload */
+	new_timeset.it_interval.tv_usec = n_usecs;    /* new ticker value */
 	new_timeset.it_value.tv_sec     = n_sec;	/* store this */
 	new_timeset.it_value.tv_usec    = n_usecs;	/* and this */
 

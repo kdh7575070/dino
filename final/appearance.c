@@ -1,9 +1,9 @@
-// In this code, we have just skins and functions to clear those skins
+// In appearance.c, we have just skins and functions to clear those skins
 #include <ncurses.h>
 void people1(int y, int x)
 {
-	mvprintw(y - 11, x, "     $$$");
-	mvprintw(y - 10, x, "    $$$$$");
+	mvprintw(y - 11, x,"     $$$");
+	mvprintw(y - 10, x,"    $$$$$");
 	mvprintw(y - 9, x, "    $$$$$");
 	mvprintw(y - 8, x, "     $$$");
 	mvprintw(y - 7, x, "   $$$$$$$$  ");
@@ -13,12 +13,12 @@ void people1(int y, int x)
 	mvprintw(y - 3, x, "$$$ $$$ $$$ ");
 	mvprintw(y - 2, x, "  $$$$   $$");
 	mvprintw(y - 1, x, "          $$");
-	mvprintw(y, x, "          $$$");
+	mvprintw(y, x,     "          $$$");
 }
 void people2(int y, int x)
 {
-	mvprintw(y - 11, x, "     $$$");
-	mvprintw(y - 10, x, "    $$$$$");
+	mvprintw(y - 11, x,"     $$$");
+	mvprintw(y - 10, x,"    $$$$$");
 	mvprintw(y - 9, x, "    $$$$$");
 	mvprintw(y - 8, x, "     $$$");
 	mvprintw(y - 7, x, "  $$$$$$$$$ $");
@@ -28,13 +28,13 @@ void people2(int y, int x)
 	mvprintw(y - 3, x, "    $$$$$$ ");
 	mvprintw(y - 2, x, " $$  $$$$  ");
 	mvprintw(y - 1, x, "  $$$$  $$$ ");
-	mvprintw(y, x, "         $$$ ");
+	mvprintw(y, x,     "         $$$ ");
 }
 void amongus1(int y, int x)
 {
-	mvprintw(y - 12, x, "      (-)  (-)  ");
-	mvprintw(y - 11, x, "       \\  \\/    ");
-	mvprintw(y - 10, x, "         ||     ");
+	mvprintw(y - 12, x,"      (-)  (-)  ");
+	mvprintw(y - 11, x,"       \\  \\/    ");
+	mvprintw(y - 10, x,"         ||     ");
 	mvprintw(y - 9, x, "         ||     ");
 	mvprintw(y - 8, x, "    ,_________  ");
 	mvprintw(y - 7, x, "  /   ,--------|");
@@ -44,14 +44,14 @@ void amongus1(int y, int x)
 	mvprintw(y - 3, x, "| |            |");
 	mvprintw(y - 2, x, "\\_|            |");
 	mvprintw(y - 1, x, "  |    ___     |");
-	mvprintw(y, x, "  \\_,_|    \\_._|");
+	mvprintw(y, x,     "  \\_,_|    \\_._|");
 }
 
 void amongus2(int y, int x)
 {
-	mvprintw(y - 12, x, "      (-)  (-)  ");
-	mvprintw(y - 11, x, "       \\  \\/    ");
-	mvprintw(y - 10, x, "         ||     ");
+	mvprintw(y - 12, x,"      (-)  (-)  ");
+	mvprintw(y - 11, x,"       \\  \\/    ");
+	mvprintw(y - 10, x,"         ||     ");
 	mvprintw(y - 9, x, "         ||     ");
 	mvprintw(y - 8, x, "    ,_________  ");
 	mvprintw(y - 7, x, "  /   ,--------|");
@@ -61,13 +61,13 @@ void amongus2(int y, int x)
 	mvprintw(y - 3, x, "| |            |");
 	mvprintw(y - 2, x, "\\_|            |");
 	mvprintw(y - 1, x, "  |    ___     |");
-	mvprintw(y, x, "  |_,_/`  |_,_/");
+	mvprintw(y, x,     "  |_,_/`  |_,_/");
 }
 
 void alphaca1(int y, int x)
 {
-	mvprintw(y - 11, x, "          A~~~A");
-	mvprintw(y - 10, x, "         ( .I. )");
+	mvprintw(y - 11, x,"          A~~~A");
+	mvprintw(y - 10, x,"         ( .I. )");
 	mvprintw(y - 9, x, "         (  ~ )");
 	mvprintw(y - 8, x, "         (  P )");
 	mvprintw(y - 7, x, "         (  A )");
@@ -77,13 +77,13 @@ void alphaca1(int y, int x)
 	mvprintw(y - 3, x, "(  )      (   )  ");
 	mvprintw(y - 2, x, "(  ) )~~( (   ) ");
 	mvprintw(y - 1, x, "(_/( )~~(_(  ) ");
-	mvprintw(y, x, "  (_/    (_/");
+	mvprintw(y, x,     "  (_/    (_/");
 }
 
 void alphaca2(int y, int x)
 {
-	mvprintw(y - 11, x, "          A~~~A");
-	mvprintw(y - 10, x, "         ( .I. )");
+	mvprintw(y - 11, x,"          A~~~A");
+	mvprintw(y - 10, x,"         ( .I. )");
 	mvprintw(y - 9, x, "         (  ~ )");
 	mvprintw(y - 8, x, "         (  P )");
 	mvprintw(y - 7, x, "         (  A )");
@@ -93,13 +93,13 @@ void alphaca2(int y, int x)
 	mvprintw(y - 3, x, "(  )      (   )  ");
 	mvprintw(y - 2, x, "(  ) )~~( (  )");
 	mvprintw(y - 1, x, "(  )_/~~( (_/  ");
-	mvprintw(y, x, "(_/     (_/");
+	mvprintw(y, x,     "(_/     (_/");
 }
 
 void dinasour1(int y, int x)
 {
-	mvprintw(y - 11, x, "         $$$$$$$");
-	mvprintw(y - 10, x, "       $$  $$$$$");
+	mvprintw(y - 11, x,"         $$$$$$$");
+	mvprintw(y - 10, x,"       $$  $$$$$");
 	mvprintw(y - 9, x, "       $$$$$$$$$");
 	mvprintw(y - 8, x, "$      $$$      ");
 	mvprintw(y - 7, x, "$$     $$$$$$$  ");
@@ -109,13 +109,13 @@ void dinasour1(int y, int x)
 	mvprintw(y - 3, x, "    $$$$$$$$    ");
 	mvprintw(y - 2, x, "     $$$$$$     ");
 	mvprintw(y - 1, x, "     $    $$$   ");
-	mvprintw(y, x, "     $$         ");
+	mvprintw(y, x,     "     $$         ");
 }
 
 void dinasour2(int y, int x)
 {
-	mvprintw(y - 11, x, "         $$$$$$$");
-	mvprintw(y - 10, x, "       $$  $$$$$");
+	mvprintw(y - 11, x,"         $$$$$$$");
+	mvprintw(y - 10, x,"       $$  $$$$$");
 	mvprintw(y - 9, x, "       $$$$$$$$$");
 	mvprintw(y - 8, x, "$      $$$      ");
 	mvprintw(y - 7, x, "$$     $$$$$$$  ");
@@ -125,7 +125,7 @@ void dinasour2(int y, int x)
 	mvprintw(y - 3, x, "    $$$$$$$$    ");
 	mvprintw(y - 2, x, "     $$$$$$     ");
 	mvprintw(y - 1, x, "     $$$  $     ");
-	mvprintw(y, x, "          $$    ");
+	mvprintw(y, x,     "          $$    ");
 }
 void cactus1(int y, int x)
 {
@@ -134,7 +134,7 @@ void cactus1(int y, int x)
 	mvprintw(y - 3, x, "# ####");
 	mvprintw(y - 2, x, "####  ");
 	mvprintw(y - 1, x, "  ## #");
-	mvprintw(y, x, "  ###");
+	mvprintw(y, x,     "  ###");
 }
 
 void cactus2(int y, int x)
@@ -144,7 +144,7 @@ void cactus2(int y, int x)
 	mvprintw(y - 3, x, "# ## #");
 	mvprintw(y - 2, x, " ####");
 	mvprintw(y - 1, x, "  ##");
-	mvprintw(y, x, "  ##");
+	mvprintw(y, x,     "  ##");
 }
 void cactus3(int y, int x)
 {
@@ -152,7 +152,7 @@ void cactus3(int y, int x)
 	mvprintw(y - 3, x, "# # #");
 	mvprintw(y - 2, x, "####");
 	mvprintw(y - 1, x, " ##");
-	mvprintw(y, x, " ##");
+	mvprintw(y, x,     " ##");
 }
 
 void sun(int y, int x)
@@ -165,7 +165,7 @@ void sun(int y, int x)
 	mvprintw(y - 3, x, "                $$        $$                ");
 	mvprintw(y - 2, x, "          $       $$$$$$$$   $              ");
 	mvprintw(y - 1, x, "              $      $            $         ");
-	mvprintw(y, x, "    $                 $                $    ");
+	mvprintw(y, x,     "    $                 $                $    ");
 }
 
 void moon(int y, int x)
@@ -176,7 +176,7 @@ void moon(int y, int x)
 	mvprintw(y - 3, x, "    @         $$$$                      @   ");
 	mvprintw(y - 2, x, "               $$$                 @        ");
 	mvprintw(y - 1, x, "                $$$$                        ");
-	mvprintw(y, x, "         @         \"$$$$$$$                @");
+	mvprintw(y, x,     "         @         \"$$$$$$$                @");
 }
 
 void showLoss(int y, int x)
@@ -187,7 +187,7 @@ void showLoss(int y, int x)
 	mvprintw(y - 3, x - 25, "xx           xxx  xxxx      xx  xxxxxxxxxxxxxx");
 	mvprintw(y - 2, x - 25, "xxxxxxxxxxxxxxxxxxxxxxxx    xx  xxxxxxxxxxxxxx");
 	mvprintw(y - 1, x - 25, "xxxxx      xxxx     xxxxx   xx  xxxxxxxxxxxxxx");
-	mvprintw(y, x - 25, "xx        xxx          xxx  xx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+	mvprintw(y, x - 25,     "xx        xxx          xxx  xx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 	mvprintw(y + 1, x - 25, "xx        xx            xx  xx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 	mvprintw(y + 2, x - 25, "xx       xx             xx  xx  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 	mvprintw(y + 3, x - 25, "Press 'r' to play again!");
@@ -207,20 +207,12 @@ void showTeam1(int x, int y)
 
 void clearCactus1(int y, int x)
 {
-	mvprintw(y - 5, x, "       ");
+	mvprintw(y - 5, x,     "       ");
 	mvprintw(y - 4, x + 7, "             ");
 	mvprintw(y - 3, x + 7, "             ");
 	mvprintw(y - 2, x + 7, "             ");
 	mvprintw(y - 1, x + 7, "             ");
-	mvprintw(y, x + 7, "             ");
-
-	// if (x <= 10) {
-	// 	mvprintw(y-4, 0, "     ");
-	// 	mvprintw(y-3, 0, "     ");
-	// 	mvprintw(y-2, 0, "     ");
-	// 	mvprintw(y-1, 0, "     ");
-	// 	mvprintw(y, 0,   "     ");
-	// }
+	mvprintw(y, x + 7,     "             ");
 }
 
 void clearDinasourDown(int diY, int diX)
