@@ -155,7 +155,7 @@ void startMenu() {
 	mvprintw(maxY+11, maxX-12, "Select mode [ c ] : alpaca");
 	mvprintw(maxY+12, maxX-12, "Select mode [ d ] : amongus");
 	getMode = getch();
-	if(getMode=='\n') getMode = 'a';
+	if(getMode!='a' && getMode!='b' && getMode!='c' && getMode!='d' ) getMode = 'a';
 	noecho();
 
 	clear();
